@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, TextInput, Text, TouchableOpacity} from 'react-native';
 
 class Cadastro extends Component {
 
@@ -25,24 +25,44 @@ class Cadastro extends Component {
                   senha: this.state.senha,
               })
         })
-        //Testar status da requisição, se for 200 redirecionar
         .then(resposta => resposta.json())
-        .then(data => this.status)
-        .catch(erro => console.warn(erro));
-    };
-
-    _irParaLogin = async status => {
-        if (status != null) {
-            try{
-                this.props.navigation.navigate('')
-            }catch (error) {}
+        //Testar status da requisição, se for 200 redirecionar
+        _irParaLogin = async status => {
+            if(status === 200) {
+                try{
+                    this.props.navigation.navigate ('/login');
+                }catch (error) { }
+                
+            }
         }
     }
-
 
     render() {
         return(
             <View>
+                <Text>Cadastro</Text>
+
+                <TextInput
+                    placeholder="nome"
+                    onChangeText={nome => this.setState({ nome })}
+                    value={this.state.nome}
+                />
+
+                <TextInput
+                    placeholder="email"
+                    onChangeText={email => this.setState({ email })}
+                    value={this.state.email}
+                />
+
+                <TextInput
+                    placeholder="senha"
+                    onChangeText={senha => this.setState({ senha })}
+                    value={this.state.senha}
+                />
+ 
+                 <TouchableOpacity onPress={this.status}>
+                     <Text>Cadastrar</Text>
+                 </TouchableOpacity>
 
             </View>
         );

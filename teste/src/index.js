@@ -9,7 +9,7 @@ import CadastroSreen from './pages/Cadastro/cadastro';
 
 const MainNavigatior = createStackNavigator ({
     Home:{screen:HomeScreen}
-});
+},{initialRouteName: 'Home',});
 
 const AuthStack = createBottomTabNavigator({
     Login: { screen: LoginScreen, },
@@ -24,6 +24,6 @@ export default createAppContainer(
             AuthStack,
         },
         {
-            initialRouteName: 'AuthStack'
+            initialRouteName: 'MainNavigatior'
         },
     ));

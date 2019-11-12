@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text, TextInput , TouchableOpacity} from 'react-native';
+import { View, Text, TextInput , TouchableOpacity, AsyncStorage} from 'react-native';
 
 
 class Login extends Component {
@@ -35,12 +35,16 @@ class Login extends Component {
     };
 
     _irParaHome = async tokenAReceber => {
+         
         if (tokenAReceber != null) {
             try {
-                await AsyncStorange.setItem('@opflix:token', tokenAReceber);
-                this.props.navigation.navigate('MainNavigator')
-            }catch (error) { }
+                await AsyncStorage.setItem('@opflix:token', tokenAReceber);
+                this.props.navigation.navigate('MainNavigatior')
+            }catch (error) {
+                console.warn(error)
+             }
         }
+        
     };
     render() {
         return (
