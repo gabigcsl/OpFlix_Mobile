@@ -33,7 +33,7 @@ class Lancamentos extends Component{
                 </TouchableOpacity>
 
                     <FlatList
-                    data={this.state.lancamentos}
+                    data={this.state.lancamentos.sort((a,b) => a.idCategoria > b.idCategoria)}
                     keyExtractor={item => item.idLancamento}
                     renderItem={({ item }) => (
                         <View>
