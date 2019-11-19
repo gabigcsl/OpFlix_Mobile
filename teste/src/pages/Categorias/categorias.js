@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, AsyncStorage} from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
 
 class Categoria extends Component {
 
@@ -7,6 +8,7 @@ class Categoria extends Component {
         super();
         this.state = {
             categorias: [],
+            nome: null
         };
     }
 
@@ -26,6 +28,22 @@ class Categoria extends Component {
     }
 
 
+    _cadastrarCategoria = async ()=> {
+        await fetch (('http://192.168.5.84:5000/api/Categoria'), {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type' : 'application/json',
+                'Authorization' : 'Bearer ' + await AsyncStorage.getItem('@opflix:token')
+            },
+            body: JSON.stringify ({
+                nome: this.state.nome
+            })
+        })
+        .then(this.setState ({nome: ''}))
+        .then(this._mostrarCategorias())
+    }
+
     render() {
 
         return (
@@ -44,6 +62,18 @@ class Categoria extends Component {
                         </View>
                     )}
                 />
+
+                <Text>Cadastrar Categoria</Text>
+                <TextInput
+                onChangeText= {nome => this.setState({nome})}
+                value = {this.state.nome}
+                />
+
+                <TouchableOpacity
+                onPress= {this._cadastrarCategoria}
+                >
+                    <Text>Cadastrar</Text>
+                </TouchableOpacity>
             </View>
         );
     }

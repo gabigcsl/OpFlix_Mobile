@@ -28,7 +28,15 @@ class Home extends Component {
     _irParaLançamentos = () => {
         this.props.navigation.navigate('LancNavigatior');
     }
+    
+    _irParaRecentes = () => {
+        this.props.navigation.navigate('RecNavigatior');
+    }
 
+    
+    _voltarLogin = () => {
+        this.props.navigation.navigate('AuthStack');
+    }
 
     render() {
         // let categoria = 
@@ -47,18 +55,26 @@ class Home extends Component {
 
 
         return (
-            <View>
+            <View style={styles.tela}>
                 <Text style={styles.titulo}>OpFlix</Text>
                 <Text style={styles.adm}>Administrador</Text>
 
+
                 <TouchableOpacity  onPress={this._irParaCategoria} style={styles.btm} >
-                    <Text>Listar Categoria</Text>
+                    <Text style={styles.categoria}>Listar Categoria</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity  onPress={this._irParaLançamentos} style={styles.btm}>
-                    <Text>Listar Lançamentos</Text>
+                    <Text style={styles.lancamentos}>Listar Lançamentos</Text>
                 </TouchableOpacity>
 
+                <TouchableOpacity  onPress={this._irParaRecentes} style={styles.btm}>
+                    <Text style={styles.recentes}>Filmes Recentes</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={this._voltarLogin}>
+                    <Text style={styles.sair}>Sair</Text>
+                </TouchableOpacity>
 
                 {/* <FlatList
                     data={this.state.categorias}
@@ -88,15 +104,30 @@ class Home extends Component {
 const styles = StyleSheet.create({
     titulo: {
         textAlign: "center",
-        fontSize: 37
+        fontSize: 37,
+        color: '#DCDCDC',
+
     },
 
     adm: {
         textAlign: "center",
         fontSize: 20,
-        marginTop: 9
+        marginTop: 9,
+        color: '#DCDCDC',
+
     },
+    
+    tela : {
+        backgroundColor: '#000000',
+        height: '100%'   
+     },
+
+
 
 })
 
 export default Home;
+
+///editar pagina home
+//editar btn
+//

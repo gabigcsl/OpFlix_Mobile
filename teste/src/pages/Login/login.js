@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text, TextInput , TouchableOpacity, AsyncStorage} from 'react-native';
+import { View, Text, TextInput , TouchableOpacity, AsyncStorage, StyleSheet} from 'react-native';
 
 
 class Login extends Component {
@@ -48,23 +48,29 @@ class Login extends Component {
     };
     render() {
         return (
-            <View>
-                <Text>Login</Text>
+            <View style={styles.fundo}>
+                <Text style={styles.login}>Login</Text>
 
-                <TextInput
+                
+
+                <Text style={styles.email}>E-mail:</Text>
+
+                <TextInput style= {styles.input}
                     placeholder="email"
                     onChangeText={email => this.setState({ email })}
                     value={this.state.email}
                 />
 
-                <TextInput
+                <Text style={styles.senha}>Senha:</Text>
+
+                <TextInput style= {styles.input2}
                     placeholder="senha"
                     onChangeText={senha => this.setState({ senha })}
                     value={this.state.senha}
                 />
 
-                <TouchableOpacity onPress={this._realizarLogin}>
-                    <Text>Entrar</Text>
+                <TouchableOpacity   onPress={this._realizarLogin}>
+                    <Text style= {styles.btn}>Entrar</Text>
                 </TouchableOpacity>
 
             </View>
@@ -73,4 +79,67 @@ class Login extends Component {
 
 }
 
+const styles = StyleSheet.create({
+    fundo : {
+        backgroundColor: '#000000',
+        height: '100%'
+    },
+
+    login: {
+        textAlign: "center",
+        fontSize: 50,
+        marginTop: 50,
+        color: '#DCDCDC',
+    },
+
+    email: {
+        color: '#DCDCDC',
+        fontSize: 17,
+        marginTop: 30,
+        marginLeft:20,
+
+    },
+
+    senha : {
+        color: '#DCDCDC',
+        fontSize: 17,
+        marginTop: 30,
+        marginLeft:20,
+    },
+
+    input: {
+        marginLeft:20,
+
+        padding: 10,
+        margin: 15,
+        height: 40,
+        borderBottomColor:'#FF8C00',
+        borderBottomWidth: 2,
+        color: '#DCDCDC',
+    },
+
+    input2: {
+        marginLeft:20,
+        marginTop: 20,
+
+        padding: 10,
+        margin: 15,
+        height: 40,
+        borderBottomColor:'#FF8C00',
+        borderBottomWidth: 2,
+        color: '#DCDCDC',
+        
+    },
+    
+    btn: {
+        textAlign: 'center',
+        marginTop: 25,
+        fontSize: 20,
+        color : '#DCDCDC',
+        
+    }
+
+})
+
 export default Login;
+

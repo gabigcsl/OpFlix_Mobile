@@ -7,7 +7,7 @@ import HomeScreen from './pages/Home/home';
 import CadastroSreen from './pages/Cadastro/cadastro';
 import CategoriaScreen from './pages/Categorias/categorias';
 import LancamentoScreen from './pages/Lançamentos/lancamentos';
-
+import RecenteScreen from './pages/Recentes/recentes';
 
 const MainNavigatior = createStackNavigator({
     Home: { screen: HomeScreen },
@@ -19,6 +19,10 @@ const CategNavigatior = createStackNavigator({
 
 const LancNavigatior = createStackNavigator({
     Lancamento: { screen: LancamentoScreen },
+});
+
+const RecNavigatior = createStackNavigator({
+    Recentes: { screen: RecenteScreen },
 });
 
 const AuthStack = createBottomTabNavigator({
@@ -34,6 +38,7 @@ export default createAppContainer(
             AuthStack,
             CategNavigatior,
             LancNavigatior,
+            RecNavigatior,
         },
         {
             initialRouteName: 'MainNavigatior'
