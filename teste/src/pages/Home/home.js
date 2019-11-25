@@ -145,10 +145,10 @@ const styles = StyleSheet.create({
         color: '#DCDCDC',
         marginTop: 45,
         marginLeft: 10,
-        fontSize: 15,
+        fontSize: 17,
         borderBottomColor:'#FF8C00',
         borderBottomWidth: 2,
-        width: 115
+        width: 130
 
         
 
@@ -158,29 +158,30 @@ const styles = StyleSheet.create({
      lancamentos: {
         color: '#DCDCDC',
         marginTop: 15,
-        fontSize: 15,
+        fontSize: 17,
         marginLeft: 10,
         borderBottomColor:'#FF8C00',
         borderBottomWidth: 2,
-        width: 140
+        width: 155
 
 
      },
 
      recentes: {
         color: '#DCDCDC',
-        fontSize: 15,
+        fontSize: 17,
         marginTop: 15,
         marginLeft: 10,
         borderBottomColor:'#FF8C00',
         borderBottomWidth: 2,
-        width: 120
+        width: 130
      },
 
      img: {
         width: 300, 
         height: 300,
-        marginLeft: 50
+        marginLeft: 50,
+        marginTop: 30
     },
 
 

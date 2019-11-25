@@ -27,7 +27,6 @@ const RecNavigatior = createStackNavigator({
 
 const AuthStack = createBottomTabNavigator({
     Login: { screen: LoginScreen, },
-    Cadastro: { screen: CadastroSreen, }
 });
 
 
@@ -41,6 +40,6 @@ export default createAppContainer(
             RecNavigatior,
         },
         {
-            initialRouteName: 'MainNavigatior'
+            initialRouteName: 'AuthStack'
         },
     ));
