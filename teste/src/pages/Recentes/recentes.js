@@ -10,6 +10,10 @@ class Recentes extends Component {
         }
     }
 
+    static navigationOptions = {
+        header:null
+    }
+
     componentDidMount() {
         this._mostrarRecentes();
     }
@@ -29,9 +33,9 @@ class Recentes extends Component {
 
     render() {
         return (
-            < View >
+            < View  style={styles.tela}>
             <TouchableOpacity onPress={this._voltarHome}>
-                    <Text>Voltar</Text>
+                    <Text style={styles.btn}>Voltar</Text>
                 </TouchableOpacity>
 
             <Text style={styles.titulo} >Recentes</Text>
@@ -57,16 +61,42 @@ class Recentes extends Component {
 const styles =StyleSheet.create({
     titulo: {
         textAlign: "center",
-        fontSize: 20,
+        fontSize: 35,
+        color : '#DCDCDC',
+        marginTop: 15
+
     },
     nome : {
-        fontSize: 15,
+        fontSize: 19,
         textAlign: "center",
-        marginTop : 9,
+        marginTop : 20,
+        color : '#DCDCDC',
+        borderBottomColor:'#FF8C00',
+        borderBottomWidth: 1,
+        width: 250,
+        marginLeft: 75
+
     },
     data: {
-        textAlign: "center"
+        textAlign: "center",
+        color : '#DCDCDC',
+
     },
+
+    btn: {
+        color : '#DCDCDC',
+        borderBottomColor:'#FF8C00',
+        borderBottomWidth: 2,
+        width: 45,
+        marginLeft: 15,
+        marginTop: 10
+    },
+
+    
+    tela : {
+        backgroundColor: '#000000',
+          height: '100%'   
+      },
 })
 
 

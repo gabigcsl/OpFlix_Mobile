@@ -9,6 +9,10 @@ class Lancamentos extends Component{
         };
     }
 
+    static navigationOptions = {
+        header:null
+    }
+
     componentDidMount() {
         this._mostrarLancamentos();
     }
@@ -25,12 +29,13 @@ class Lancamentos extends Component{
     }
     render () {
         return (
-            <View>
-                    <Text style={styles.titulo}>Lista de Lançamentos</Text>
+            <View style={styles.tela}>
 
             <TouchableOpacity onPress={this._voltarHome}>
-                    <Text>Voltar</Text>
+                    <Text style={styles.btn}>Voltar</Text>
                 </TouchableOpacity>
+                
+                    <Text style={styles.titulo}>Lista de Lançamentos</Text>
 
                     <FlatList
                     data={this.state.lancamentos.sort((a,b) => a.idCategoria > b.idCategoria)}
@@ -56,19 +61,48 @@ class Lancamentos extends Component{
 
 const styles =StyleSheet.create ({
     titulo: {
-        fontSize: 20,
+        fontSize: 30,
         textAlign: "center",
+        color : '#DCDCDC',
+        marginTop: 15,
+
     },
 
     box:{
         textAlign: "center",
+        color : '#DCDCDC',
+        marginLeft: 20,
+        marginEnd: 45,
+
     },
     filme:{
-        fontSize: 18,
+        fontSize: 22,
         textAlign: "center",
-        marginTop: 15,
+        marginTop: 18,
+        color : '#DCDCDC',
+        borderBottomColor:'#FF8C00',
+        borderBottomWidth: 1,
+        width: 350,
+        marginLeft: 30
 
-    }
+    },
+
+    tela : {
+        backgroundColor: '#000000',
+          height: '100%'   
+      },
+
+      btn: {
+        color : '#DCDCDC',
+        borderBottomColor:'#FF8C00',
+        borderBottomWidth: 2,
+        width: 45,
+        marginLeft: 15,
+        marginTop: 10
+
+
+      },
+    
 })
 
 export default Lancamentos;
