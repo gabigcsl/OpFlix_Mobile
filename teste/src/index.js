@@ -4,7 +4,6 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import LoginScreen from './pages/Login/login';
 import HomeScreen from './pages/Home/home';
-import CadastroSreen from './pages/Cadastro/cadastro';
 import CategoriaScreen from './pages/Categorias/categorias';
 import LancamentoScreen from './pages/Lançamentos/lancamentos';
 import RecenteScreen from './pages/Recentes/recentes';
@@ -25,7 +24,7 @@ const RecNavigatior = createStackNavigator({
     Recentes: { screen: RecenteScreen },
 });
 
-const AuthStack = createBottomTabNavigator({
+const AuthStack = createStackNavigator({
     Login: { screen: LoginScreen, },
 });
 

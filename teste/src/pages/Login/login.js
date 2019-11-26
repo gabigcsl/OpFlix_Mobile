@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text, TextInput , TouchableOpacity, AsyncStorage, StyleSheet} from 'react-native';
+import { View, Text, TextInput , TouchableOpacity, AsyncStorage, StyleSheet, Image} from 'react-native';
 
 
 class Login extends Component {
@@ -13,6 +13,11 @@ class Login extends Component {
         };
     
     }
+
+    static navigationOptions = {
+        header:null
+    }
+
     // chamda para a api
     _realizarLogin = async () => {
         await fetch('http://192.168.5.84:5000/api/Login', {
@@ -73,6 +78,11 @@ class Login extends Component {
                     <Text style= {styles.btn}>Entrar</Text>
                 </TouchableOpacity>
 
+                <Image
+          source={{uri:'https://cdn4.iconfinder.com/data/icons/planner-basic/64/popcorn-movie-time-512.png'}}
+          style={styles.img}
+        />
+
             </View>
         );
     }
@@ -132,12 +142,22 @@ const styles = StyleSheet.create({
     },
     
     btn: {
-        textAlign: 'center',
         marginTop: 25,
         fontSize: 20,
         color : '#DCDCDC',
+        borderBottomColor:'#FF8C00',
+        borderBottomWidth: 1,
+        width: 55,
+        marginLeft: 170
         
-    }
+    },
+
+    img: {
+        width: 200, 
+        height: 200,
+        marginLeft: 100,
+        marginTop: 30
+    },
 
 })
 

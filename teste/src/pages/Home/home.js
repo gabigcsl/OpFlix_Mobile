@@ -65,7 +65,6 @@ class Home extends Component {
                 </TouchableOpacity>
 
                 <Text style={styles.titulo}>OpFlix</Text>
-                <Text style={styles.adm}>Administrador</Text>
 
                 <TouchableOpacity  onPress={this._irParaCategoria} >
                     <Text style={styles.categoria}>Listar Categoria</Text>
@@ -114,18 +113,11 @@ class Home extends Component {
 const styles = StyleSheet.create({
     titulo: {
         textAlign: "center",
-        fontSize: 37,
+        fontSize: 45,
         color: '#DCDCDC',
 
     },
 
-    adm: {
-        textAlign: "center",
-        fontSize: 20,
-        marginTop: 9,
-        color: '#DCDCDC',
-
-    },
     
     tela : {
         backgroundColor: '#000000',
